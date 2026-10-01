@@ -1,15 +1,18 @@
-import salary
+from recursive import factorial, fibonacci, sum_of_digits, decimal_to_binary
 
-name = input("Enter employee name: ")
-basic = float(input("Enter basic salary: "))
+n = int(input("Enter a number: "))
 
-gross = salary.gross_salary(basic)
-deduction = salary.deductions(gross)
-net = salary.net_salary(gross, deduction)
+print("Factorial =", factorial(n))
 
-print("\n--- Employee Salary Details ---")
-print("Employee Name:", name)
-print("Basic Salary:", basic)
-print("Gross Salary:", gross)
-print("Deductions:", deduction)
-print("Net Salary:", net)
+print("Fibonacci Series:")
+for i in range(n):
+    print(fibonacci(i), end=" ")
+
+print()
+
+print("Sum of Digits =", sum_of_digits(n))
+
+if n == 0:
+    print("Binary =", 0)
+else:
+    print("Binary =", decimal_to_binary(n))
