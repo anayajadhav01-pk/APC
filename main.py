@@ -1,9 +1,15 @@
-from string_utils import count_vowels, reverse_string, is_palindrome, count_words, remove_spaces
+import salary
 
-text = input("Enter a string: ")
+name = input("Enter employee name: ")
+basic = float(input("Enter basic salary: "))
 
-print("Number of vowels:", count_vowels(text))
-print("Reverse:", reverse_string(text))
-print("Palindrome:", is_palindrome(text))
-print("Number of words:", count_words(text))
-print("Without spaces:", remove_spaces(text))
+gross = salary.gross_salary(basic)
+deduction = salary.deductions(gross)
+net = salary.net_salary(gross, deduction)
+
+print("\n--- Employee Salary Details ---")
+print("Employee Name:", name)
+print("Basic Salary:", basic)
+print("Gross Salary:", gross)
+print("Deductions:", deduction)
+print("Net Salary:", net)
